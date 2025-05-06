@@ -39,5 +39,5 @@ tasks:
     dir: .
     cmds:
       - echo "Running tests with coverage..."
-      - pixi run pytest --cov=../. ../tests/
+      - pixi run pytest --cov=../tests/
       - pixi run coverage html -d ../coverage_html
