@@ -8,30 +8,35 @@ tasks:
 
   lint:
     desc: Run ruff linter
+    dir : .
     cmds:
       - echo "Running ruff linter..."
       - pixi run ruff check .
 
   format:
     desc: Format code with ruff
+    dir : .
     cmds:
       - echo "Formatting code..."
       - pixi run ruff format .
 
   fix:
     desc: Fix the code with ruff
+    dir : .
     cmds:
       - echo "Fixing code ..."
       - pixi run ruff check . --fix
       
   test:
     desc: Run pytest
+    dir : .
     cmds:
       - echo "Running tests..."
       - pixi run pytest {{.CLI_ARGS}}
     
   test:cov:
     desc: Run pytest with coverage
+    dir : .
     cmds:
       - echo "Running tests with coverage..."
       - pixi run pytest --cov=. tests/
